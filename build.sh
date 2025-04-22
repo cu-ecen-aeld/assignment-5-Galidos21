@@ -19,6 +19,7 @@ then
 	if [ -e ${AESD_MODIFIED_DEFCONFIG} ]
 	then
 		echo "USING ${AESD_MODIFIED_DEFCONFIG}"
+		make -C buildroot distclean
 		make -C buildroot defconfig BR2_EXTERNAL=${EXTERNAL_REL_BUILDROOT} BR2_DEFCONFIG=${AESD_MODIFIED_DEFCONFIG_REL_BUILDROOT}
 	else
 		echo "Run ./save_config.sh to save this as the default configuration in ${AESD_MODIFIED_DEFCONFIG}"
